@@ -11,6 +11,7 @@ import { useBonds, useWeb3Context } from "src/hooks";
 import { isPendingTxn, txnButtonTextGeneralPending } from "src/slices/PendingTxnsSlice";
 
 export function ClaimBondTableData({ userBond }) {
+  console.log("=-=-=", userBond);
   const dispatch = useDispatch();
   const { address, provider, networkId } = useWeb3Context();
   const { bonds, expiredBonds } = useBonds(networkId);
@@ -49,11 +50,11 @@ export function ClaimBondTableData({ userBond }) {
         </div>
       </TableCell>
       <TableCell align="center">
-        {bond.pendingPayout ? trim(bond.pendingPayout, 4) : <Skeleton width={100} />}
-      </TableCell>
-      <TableCell align="center">{bond.interestDue ? trim(bond.interestDue, 4) : <Skeleton width={100} />}</TableCell>
-      <TableCell align="right" style={{ whiteSpace: "nowrap" }}>
         {isAppLoading ? <Skeleton /> : vestingPeriod()}
+        {/* {bond.pendingPayout ? trim(bond.pendingPayout, 4) : <Skeleton width={100} />} */}
+      </TableCell>
+      <TableCell align="center">
+        {bond.interestDue ? trim(bond.interestDue, 4) + " sOHM" : <Skeleton width={100} />}
       </TableCell>
       <TableCell align="right">
         <Button

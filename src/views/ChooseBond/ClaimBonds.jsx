@@ -74,13 +74,10 @@ function ClaimBonds({ activeBonds }) {
                           <Trans>Bond</Trans>
                         </TableCell>
                         <TableCell align="center">
-                          <Trans>Claimable</Trans>
+                          <Trans>Duration</Trans>
                         </TableCell>
                         <TableCell align="center">
-                          <Trans>Pending</Trans>
-                        </TableCell>
-                        <TableCell align="right">
-                          <Trans>Fully Vested</Trans>
+                          <Trans>Payout</Trans>
                         </TableCell>
                         <TableCell align="right"></TableCell>
                       </TableRow>

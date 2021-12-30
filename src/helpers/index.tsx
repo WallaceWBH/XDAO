@@ -122,7 +122,7 @@ export function prettyVestingPeriod(currentBlock: number, vestingBlock: number) 
 
   const seconds = secondsUntilBlock(currentBlock, vestingBlock);
   if (seconds < 0) {
-    return "Fully Vested";
+    return "Completed";
   }
   return prettifySeconds(seconds);
 }
